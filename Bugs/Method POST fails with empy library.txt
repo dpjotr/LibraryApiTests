@@ -15,7 +15,7 @@ Response code: 201, created
 Body:   {
             "book": {
                 "author": "Роберт Мартин",
-                "id": 3,
+                "id": 1,
                 "isElectronicBook": false,
                 "name": "Чистый код",
                 "year": 1998
