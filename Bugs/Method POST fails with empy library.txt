@@ -1,0 +1,31 @@
+repro steps:
+
+1. Delete everything from library:
+(using DELETE http://localhost:5000/api/book/{idNumber} or some how else)
+2. Try to post any new book to library eg:
+POST http://localhost:5000/api/book
+        {
+            "author": "Роберт Мартин",
+            "isElectronicBook": false,
+            "name": "Чистый код",
+            "year": 1998
+        }
+Expected Result:
+Response code: 201, created
+Body:   {
+            "book": {
+                "author": "Роберт Мартин",
+                "id": 3,
+                "isElectronicBook": false,
+                "name": "Чистый код",
+                "year": 1998
+            }
+        }
+Real Result:
+Response code: 500, Internal server error
+Body:<!doctype html>
+        <html lang=en>
+        <title>500 Internal Server Error</title>
+        <h1>Internal Server Error</h1>
+        <p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or
+	        there is an error in the application.</p>
